@@ -68,7 +68,8 @@
     "artworks": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::artwork.artwork"
+      "target": "api::artwork.artwork",
+      "mappedBy": "user"
     }
   }
 }

@@ -376,6 +376,11 @@ export interface ApiArtworkArtwork extends Schema.CollectionType {
     name: Attribute.String;
     isActive: Attribute.Boolean;
     image: Attribute.Media;
+    user: Attribute.Relation<
+      'api::artwork.artwork',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
