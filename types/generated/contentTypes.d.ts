@@ -368,6 +368,7 @@ export interface ApiArtworkArtwork extends Schema.CollectionType {
     singularName: 'artwork';
     pluralName: 'artworks';
     displayName: 'Artwork';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -381,6 +382,9 @@ export interface ApiArtworkArtwork extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.user'
     >;
+    isApproved: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
