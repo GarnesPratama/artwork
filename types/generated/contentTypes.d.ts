@@ -385,6 +385,8 @@ export interface ApiArtworkArtwork extends Schema.CollectionType {
     isApproved: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
+    description: Attribute.Text;
+    social_media_url: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
