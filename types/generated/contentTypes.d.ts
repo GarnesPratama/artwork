@@ -375,7 +375,7 @@ export interface ApiArtworkArtwork extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    isActive: Attribute.Boolean;
+    isActive: Attribute.Boolean & Attribute.DefaultTo<false>;
     image: Attribute.Media;
     user: Attribute.Relation<
       'api::artwork.artwork',

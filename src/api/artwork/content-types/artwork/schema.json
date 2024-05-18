@@ -16,7 +16,8 @@
       "type": "string"
     },
     "isActive": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "image": {
       "type": "media",
