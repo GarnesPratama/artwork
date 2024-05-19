@@ -70,6 +70,13 @@
       "relation": "oneToMany",
       "target": "api::artwork.artwork",
       "mappedBy": "user"
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
