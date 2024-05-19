@@ -368,14 +368,25 @@ export interface ApiArtworkArtwork extends Schema.CollectionType {
     singularName: 'artwork';
     pluralName: 'artworks';
     displayName: 'Artwork';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String;
-    isActive: Attribute.Boolean;
+    isActive: Attribute.Boolean & Attribute.DefaultTo<false>;
     image: Attribute.Media;
+    user: Attribute.Relation<
+      'api::artwork.artwork',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    isApproved: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    description: Attribute.Text;
+    social_media_url: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -806,7 +817,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -835,6 +845,12 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    artworks: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::artwork.artwork'
+    >;
+    avatar: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
