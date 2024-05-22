@@ -411,6 +411,7 @@ export interface ApiCatalogCatalog extends Schema.CollectionType {
     singularName: 'catalog';
     pluralName: 'catalogs';
     displayName: 'Catalog';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -419,6 +420,7 @@ export interface ApiCatalogCatalog extends Schema.CollectionType {
     name: Attribute.String;
     image: Attribute.Media;
     isActive: Attribute.Boolean;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
