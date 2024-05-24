@@ -4,7 +4,8 @@
   "info": {
     "singularName": "catalog",
     "pluralName": "catalogs",
-    "displayName": "Catalog"
+    "displayName": "Catalog",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,17 +16,21 @@
       "type": "string"
     },
     "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "isActive": {
       "type": "boolean"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }
